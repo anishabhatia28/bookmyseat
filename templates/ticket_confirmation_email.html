@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .email-container {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .email-header {
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+        .email-body {
+            margin-top: 20px;
+        }
+        .booking-details {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h2>Booking Confirmation</h2>
+        </div>
+        <div class="email-body">
+            <p>Dear {{ user.username }},</p>
+            <p>Your booking for the movie "<strong>{{ booking.movie_name }}</strong>" at "<strong>{{ booking.theater_name }}</strong>" 
+               for the showtime <strong>{{ booking.showtime }}</strong> has been confirmed.</p>
+
+            <div class="booking-details">
+                <h3>Booking Details:</h3>
+                <p><strong>Movie:</strong> {{ booking.movie_name }}</p>
+                <p><strong>Theater:</strong> {{ booking.theater_name }}</p>
+                <p><strong>Showtime:</strong> {{ booking.showtime }}</p>
+                <p><strong>Booking Date:</strong> {{ booking.booked_at }}</p>
+            </div>
+
+            <p>Thank you for choosing us!</p>
+            <p>Best regards,<br>Your Movie Booking Team</p>
+        </div>
+    </div>
+</body>
+</html>
